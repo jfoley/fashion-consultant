@@ -2,6 +2,7 @@
   "name": "fashion-consultant",
   "version": "0.0.1",
   "description": "A broccoli based styleguide generator",
+  "readme": "README.md",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/babel-node ./node_modules/.bin/jasmine"
