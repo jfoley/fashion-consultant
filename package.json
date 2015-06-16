@@ -26,6 +26,16 @@
   },
   "dependencies": {
     "broccoli": "^0.16.3",
-    "broccoli-funnel": "^0.2.3"
+    "broccoli-caching-writer": "^0.5.5",
+    "broccoli-filter": "^0.1.14",
+    "broccoli-funnel": "^0.2.3",
+    "broccoli-read-compat": "^0.1.3",
+    "core-object": "^1.1.0",
+    "glob": "^5.0.10",
+    "handlebars": "^3.0.3",
+    "highlight.js": "^8.6.0",
+    "js-yaml": "^3.3.1",
+    "marked": "^0.3.3",
+    "mkdirp": "^0.5.1"
   }
 }

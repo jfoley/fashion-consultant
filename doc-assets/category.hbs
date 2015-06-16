@@ -1,0 +1,14 @@
+
+{{#each fragments}}
+  <div class="styleguide fragment">
+    <h1 id='{{this.metadata.title}}'>{{this.metadata.title}}</h1>
+    <div class="codeExample">
+      <div class="exampleOutput">
+        {{{this.example}}}
+      </div>
+      <div class="codeBlock">
+        {{{this.rendered}}}
+      </div>
+    </div>
+  </div>
+{{/each}}

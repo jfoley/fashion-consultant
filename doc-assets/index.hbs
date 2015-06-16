@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+  <head>
+    {{#each cssFiles}}
+      <link rel="stylesheet" href="./{{this}}" media="screen" title="no title" charset="utf-8">
+    {{/each}}
+  </head>
+
+  <body>
+    {{#each categories}}
+      <div class="category">
+        <h2>{{this.name}}</h2>
+        {{{this.rendered}}}
+      </div>
+    {{/each}}
+  </body>
+</html>
