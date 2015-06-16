@@ -1,6 +1,6 @@
 {
   "name": "fashion-consultant",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A broccoli based styleguide generator",
   "readme": "README.md",
   "main": "index.js",
