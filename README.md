@@ -4,7 +4,7 @@ Fashion Consultant helps you build styleguides using the broccoli build pipeline
 
 # Installation
 
-npm install --save fashion-consultant
+`npm install --save fashion-consultant`
 
 # Usage
 
