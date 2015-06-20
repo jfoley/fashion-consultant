@@ -1,6 +1,6 @@
+var Path = require('path');
 var coreObject = require('core-object');
 var readCompatAPI = require('broccoli-read-compat');
-
 var MergeTrees = require('broccoli-merge-trees');
 var Funnel = require('broccoli-funnel');
 
@@ -9,15 +9,17 @@ var Markdown = require('./lib/markdown');
 var HtmlBuilder = require('./lib/construct-html');
 
 var FashionConsultant = coreObject.extend({
+  rootDir: __dirname,
+
   init: function(options) {
     this.inputTree = options.inputPaths;
 
     if(options.docAssetsPath === undefined) {
-      options.docAssetsPath = 'doc-assets';
+      options.docAssetsPath = Path.join(this.rootDir, 'doc-assets');
     }
 
     if(options.srcCss === undefined) {
-      options.srcCss = Funnel('app/assets/styles', {
+      options.srcCss = Funnel(Path.join(this.rootDir, 'app/assets/styles'), {
         include: ['**/*.css']
       });
     }
@@ -54,7 +56,7 @@ var FashionConsultant = coreObject.extend({
       include: ['**/*.css'],
     });
 
-    var html = HtmlBuilder(MergeTrees([markdownOutputFile, docAssets]), {
+    var html = HtmlBuilder(MergeTrees([markdownOutputFile, docAssets, strippedCss]), {
       markdownPath: Markdown._outputPath,
       singleFile: true,
     });
