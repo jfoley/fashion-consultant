@@ -4,7 +4,7 @@ var readCompatAPI = require('broccoli-read-compat');
 var MergeTrees = require('broccoli-merge-trees');
 var Funnel = require('broccoli-funnel');
 
-var CommentStripper = require('./lib/comment-stripper');
+var CssParser = require('./lib/css-parser');
 var Markdown = require('./lib/markdown');
 var HtmlBuilder = require('./lib/construct-html');
 
@@ -32,18 +32,18 @@ var FashionConsultant = coreObject.extend({
   },
 
   rebuild: function() {
-    var cssStripper = CommentStripper(this.inputTree);
+    var cssStripper = CssParser(this.inputTree);
 
     var docFragments = Funnel(cssStripper, {
-      include: [CommentStripper._docFragmentsFile]
+      include: [CssParser._docFragmentsFile]
     });
 
     var strippedCss = Funnel(cssStripper, {
-      exclude: [CommentStripper._docFragmentsFile]
+      exclude: [CssParser._docFragmentsFile]
     })
 
     var markdown = Markdown(docFragments, {
-      docFragmentsPath: CommentStripper._docFragmentsFile,
+      docFragmentsPath: CssParser._docFragmentsFile,
     });
 
     var markdownOutputFile = Funnel(markdown, {

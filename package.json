@@ -23,7 +23,11 @@
   "homepage": "https://github.com/jfoley/fashion-consultant",
   "devDependencies": {
     "babel": "^5.5.8",
-    "jasmine": "^2.3.1"
+    "colors": "^1.1.2",
+    "diff": "^1.4.0",
+    "jasmine": "^2.3.1",
+    "jasmine-diff-matchers": "^2.0.0",
+    "strip-indent": "^1.0.1"
   },
   "dependencies": {
     "broccoli": "^0.16.3",
@@ -37,6 +41,7 @@
     "handlebars": "^3.0.3",
     "highlight.js": "^8.6.0",
     "js-yaml": "^3.3.1",
+    "lodash": "^3.9.3",
     "marked": "^0.3.3",
     "mkdirp": "^0.5.1"
   }
